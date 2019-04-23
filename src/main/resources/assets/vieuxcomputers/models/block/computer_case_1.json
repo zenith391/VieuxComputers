@@ -1,0 +1,11 @@
+{
+	"parent": "block/cube",
+	"textures": {
+		"down": "vieuxcomputers:blocks/computer_case_1",
+		"up": "vieuxcomputers:blocks/computer_case_1",
+		"north": "vieuxcomputers:blocks/computer_case_1",
+		"south": "vieuxcomputers:blocks/computer_case_1",
+		"west": "vieuxcomputers:blocks/computer_case_1",
+		"east": "vieuxcomputers:blocks/computer_case_1"
+	}
+}

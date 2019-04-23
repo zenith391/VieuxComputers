@@ -3,6 +3,7 @@ package com.vieuxcomputers;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -41,7 +42,6 @@ public class VieuxComputers {
     private void setup(final FMLCommonSetupEvent event)
     {
     	LOGGER.info("Loading Lua 5.2 DLL..");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -76,13 +76,19 @@ public class VieuxComputers {
     public static class RegistryEvents {
     	
         @SubscribeEvent
-        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
+        public static void onBlocksRegistry(RegistryEvent.Register<Block> blockRegistryEvent) {
         	IForgeRegistry<Block> blockRegistry = blockRegistryEvent.getRegistry();
         	BlocksInit.registerBlocks(blockRegistry);
         }
         
         @SubscribeEvent
-        public static void onItemsRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
+        public static void registerTileEntities(RegistryEvent.Register<TileEntityType<?>> evt) {
+        	IForgeRegistry<TileEntityType<?>> teRegistry = evt.getRegistry();
+        	BlocksInit.registerTileEntities(teRegistry);
+        }
+        
+        @SubscribeEvent
+        public static void onItemsRegistry(RegistryEvent.Register<Item> itemRegistryEvent) {
         	IForgeRegistry<Item> itemRegistry = itemRegistryEvent.getRegistry();
         	ItemsInit.registerItems(itemRegistry);
         }

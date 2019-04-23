@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "normal": {
+            "model": "vieuxcomputers:block/computer_case_1" 
+        }
+    }
+}

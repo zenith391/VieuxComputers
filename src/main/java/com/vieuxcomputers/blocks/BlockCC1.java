@@ -9,6 +9,7 @@ public class BlockCC1 extends BlockComputerCase {
 
 	public BlockCC1() {
 		super();
+		setRegistryName("vieuxcomputers", "computer_case_1");
 	}
 	
 }
